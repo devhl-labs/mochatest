@@ -1,0 +1,24 @@
+{
+    "name": "mochatest",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // mocha TS test explorer
+                "hbenl.vscode-mocha-test-adapter"
+            ],
+            "settings": {
+                "mochaExplorer.cwd": "./test",
+                "mochaExplorer.logpanel": true,
+                // "mochaExplorer.files": ["**/tests/*.mjs", "**/tests/*.ts"]
+                "mochaExplorer.files": "**/tests/*.mjs"
+                // "mochaExplorer.files": "**/tests/*.ts"
+            }
+        }
+    },
+    "workspaceMount": "source=${localWorkspaceFolder},target=/mochatest,type=bind,consistency=cached",
+    "workspaceFolder": "/mochatest",
+    "postStartCommand": "cd /mochatest/test && rm -rf node_modules && npm install"
+}

@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "forceConsistentCasingInFileNames": true,
+        "module": "nodenext",
+        "moduleResolution": "NodeNext",
+    },
+    "include": [
+        "src/tests/foo.mjs",
+
+        // "src/tests/foo.ts"
+    ],
+    "rootDirs": [
+        "./src"
+    ]
+}
